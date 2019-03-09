@@ -1,5 +1,5 @@
 {
-  "name": "happyhouse-framework",
+  "name": "@happyhouse/happyhouse-framework",
   "version": "0.1.0",
   "private": true,
   "scripts": {
