@@ -1,6 +1,6 @@
 import { validationResult } from 'express-validator/check';
 
-import { ResponseTrait } from '../Traits';
+// import { ResponseTrait } from '../Traits';
 
 class BaseRequest {
   public static validate(req: any, res: any, next: any): void {
@@ -10,9 +10,9 @@ class BaseRequest {
     }
 
     return res.json(
-      ResponseTrait.error(
-        String(errors.mapped()), 400
-      )
+      // ResponseTrait.error(
+      //   String(errors.mapped()), 400
+      // )
     );
   }
 }

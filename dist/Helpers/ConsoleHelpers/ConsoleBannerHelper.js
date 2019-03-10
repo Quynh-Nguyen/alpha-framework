@@ -1,5 +1,5 @@
+"use strict";
 // import * as Logger from 'debug';
-
 // export function banner(log: Logger): void {
 //     if (env.app.banner) {
 //         const route = () => `${env.app.schema}://${env.app.host}:${env.app.port}`;
@@ -27,3 +27,4 @@
 //         log(`Application is up and running.`);
 //     }
 // }
+//# sourceMappingURL=ConsoleBannerHelper.js.map
