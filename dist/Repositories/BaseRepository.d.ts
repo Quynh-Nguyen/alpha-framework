@@ -1,4 +1,4 @@
-import { Repository, ObjectLiteral } from 'typeorm';
+import { Repository, ObjectLiteral, DeepPartial } from 'typeorm';
 export declare class BaseRepository<Entity extends ObjectLiteral> extends Repository<Entity> {
-    createOrUpdate(): Promise<Entity>;
+    createOrUpdate(plainEntityLikeOrPlainEntityLikes?: DeepPartial<Entity> | DeepPartial<Entity>[]): Entity | Entity[];
 }
