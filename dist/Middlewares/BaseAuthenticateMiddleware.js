@@ -16,5 +16,5 @@ class BaseAuthenticateMiddleware extends Traits_1.ResponseTrait {
         }
     }
 }
-exports.BaseAuthenticateMiddleware = BaseAuthenticateMiddleware;
+exports.default = BaseAuthenticateMiddleware;
 //# sourceMappingURL=BaseAuthenticateMiddleware.js.map

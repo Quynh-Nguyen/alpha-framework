@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 
 import { ResponseTrait } from '../Traits';
 
-export class BaseAuthenticateMiddleware extends ResponseTrait {
+class BaseAuthenticateMiddleware extends ResponseTrait {
   constructor() {
     super();
   }
@@ -19,3 +19,5 @@ export class BaseAuthenticateMiddleware extends ResponseTrait {
     }
   }
 }
+
+export default BaseAuthenticateMiddleware;
