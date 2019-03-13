@@ -1,19 +1,20 @@
 import { validationResult } from 'express-validator/check';
+import { Request, Response, NextFunction } from 'express';
 
-// import { ResponseTrait } from '../Traits';
+import { ResponseTrait } from '../Traits';
 
-class BaseRequest {
-  public static validate(req: any, res: any, next: any): void {
+class BaseRequest extends ResponseTrait {
+  constructor() {
+    super();
+  }
+
+  public static validate(req: Request, res: Response, next: NextFunction): any {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
       return next();
     }
 
-    return res.json(
-      // ResponseTrait.error(
-      //   String(errors.mapped()), 400
-      // )
-    );
+    return this.error(res, errors.mapped(), 400);
   }
 }
 

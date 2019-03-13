@@ -6,13 +6,13 @@ class BaseAuthenticateMiddleware extends Traits_1.ResponseTrait {
         super();
     }
     //@TODO: Initialize Watch Log Service
-    handle(req, res, next) {
+    static handle(req, res, next) {
         try {
             console.log(req.body);
             return next();
         }
         catch (e) {
-            this.error(res, 'Testing', e.code);
+            return this.error(res, 'Testing', e.code);
         }
     }
 }

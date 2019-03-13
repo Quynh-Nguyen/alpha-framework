@@ -1,13 +1,7 @@
 import { ResponseTraitType } from '../Types';
 import { Response } from 'express';
 
-class ResponseTrait {
-  constructor() {
-    //
-  }
-}
-
-interface ResponseTrait {
+interface ResponseTraitInterface {
   success(res: Response, data: any): any;
   successData(data: any): ResponseTraitType;
   error(res: Response, message: any, statusCode: number): void;
@@ -19,48 +13,59 @@ interface ResponseTrait {
   accepted(res: Response, data: any): void;
 }
 
-ResponseTrait.prototype.successData = (data: any): ResponseTraitType => {
-  return {
-    status: true,
-    data,
-    message: 'OK',
+function staticImplements<T>() {
+  return (constructor: T) => {constructor};
+}
+
+@staticImplements<ResponseTraitInterface>()
+class ResponseTrait {
+  constructor() {
+    //
+  }
+
+  public static successData = (data: any): ResponseTraitType => {
+    return {
+      status: true,
+      data,
+      message: 'OK',
+    };
   };
-};
 
-ResponseTrait.prototype.success = (res: Response, data: any) => {
-  return res.status(200).json(ResponseTrait.prototype.successData(data));
-};
-
-ResponseTrait.prototype.errorData = (message: any): ResponseTraitType => {
-  return {
-    status: false,
-    data: {},
-    message,
+  public static success = (res: Response, data: any) => {
+    return res.status(200).json(ResponseTrait.successData(data));
   };
-};
 
-ResponseTrait.prototype.error = (res: Response, message: any, statusCode: number) => {
-  return res.status(statusCode).json(ResponseTrait.prototype.errorData(message));
-};
+  public static errorData = (message: any): ResponseTraitType => {
+    return {
+      status: false,
+      data: {},
+      message,
+    };
+  };
 
-ResponseTrait.prototype.notFound = (res: Response) => {
-  return res.status(404).json(ResponseTrait.prototype.errorData('RESOURCE_NOT_FOUND'));
-};
+  public static error = (res: Response, message: any, statusCode: number) => {
+    return res.status(statusCode).json(ResponseTrait.errorData(message));
+  };
 
-ResponseTrait.prototype.unauthenticated = (res: Response) => {
-  return res.status(401).json(ResponseTrait.prototype.errorData('UNAUTHENTICATED'));
-};
+  public static notFound = (res: Response) => {
+    return res.status(404).json(ResponseTrait.errorData('RESOURCE_NOT_FOUND'));
+  };
 
-ResponseTrait.prototype.unauthorized = (res: Response) => {
-  return res.status(403).json(ResponseTrait.prototype.errorData('UNAUTHORIZED'));
-};
+  public static unauthenticated = (res: Response) => {
+    return res.status(401).json(ResponseTrait.errorData('UNAUTHENTICATED'));
+  };
 
-ResponseTrait.prototype.badRequest = (res: Response) => {
-  return res.status(400).json(ResponseTrait.prototype.errorData('BAD_REQUEST'));
-};
+  public static unauthorized = (res: Response) => {
+    return res.status(403).json(ResponseTrait.errorData('UNAUTHORIZED'));
+  };
 
-ResponseTrait.prototype.accepted = (res: Response, data: any) => {
-  return res.status(200).json(ResponseTrait.prototype.successData(data));
-};
+  public static badRequest = (res: Response) => {
+    return res.status(400).json(ResponseTrait.errorData('BAD_REQUEST'));
+  };
+
+  public static accepted = (res: Response, data: any) => {
+    return res.status(200).json(ResponseTrait.successData(data));
+  };
+}
 
 export default ResponseTrait;

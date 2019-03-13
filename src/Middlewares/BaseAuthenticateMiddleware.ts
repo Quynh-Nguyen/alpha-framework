@@ -9,13 +9,13 @@ class BaseAuthenticateMiddleware extends ResponseTrait {
 
   //@TODO: Initialize Watch Log Service
 
-  public handle(req: Request, res: Response, next: NextFunction): any {
+  public static handle(req: Request, res: Response, next: NextFunction): any {
     try {
       console.log(req.body);
       
       return next();
     } catch (e) {
-      this.error(res, 'Testing', e.code);
+      return this.error(res, 'Testing', e.code);
     }
   }
 }
