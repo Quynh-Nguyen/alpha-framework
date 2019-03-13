@@ -6,9 +6,9 @@ class BaseAuthenticateMiddleware extends Traits_1.ResponseTrait {
         super();
     }
     //@TODO: Initialize Watch Log Service
-    static handle(req, res, next) {
+    static handle({}, res, next) {
         try {
-            console.log(req.body);
+            //@TODO: Call to User service for checking authentication
             return next();
         }
         catch (e) {

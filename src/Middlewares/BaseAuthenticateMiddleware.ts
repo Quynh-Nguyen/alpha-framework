@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from 'express';
+import { Response, NextFunction } from 'express';
 
 import { ResponseTrait } from '../Traits';
 
@@ -9,9 +9,9 @@ class BaseAuthenticateMiddleware extends ResponseTrait {
 
   //@TODO: Initialize Watch Log Service
 
-  public static handle(req: Request, res: Response, next: NextFunction): any {
+  public static handle({}, res: Response, next: NextFunction): any {
     try {
-      console.log(req.body);
+      //@TODO: Call to User service for checking authentication
       
       return next();
     } catch (e) {
