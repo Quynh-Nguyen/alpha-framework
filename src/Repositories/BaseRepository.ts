@@ -1,6 +1,6 @@
-import { AbstractRepository } from 'typeorm';
+import { AbstractRepository, ObjectLiteral } from 'typeorm';
 
 
-export default class BaseRepository<Entity> extends AbstractRepository<Entity> {
+export class BaseRepository<Entity extends ObjectLiteral> extends AbstractRepository<Entity> {
 
 }
