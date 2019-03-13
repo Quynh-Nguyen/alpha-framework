@@ -3,6 +3,8 @@ import { Request, Response, NextFunction } from 'express';
 
 import { ResponseTrait } from '../Traits';
 
+const { error } = ResponseTrait;
+
 class BaseRequest extends ResponseTrait {
   constructor() {
     super();
@@ -14,7 +16,7 @@ class BaseRequest extends ResponseTrait {
       return next();
     }
 
-    return this.error(res, errors.mapped(), 400);
+    return error(res, errors.mapped(), 400);
   }
 }
 
