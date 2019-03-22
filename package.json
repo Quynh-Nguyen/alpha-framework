@@ -1,5 +1,5 @@
 {
-  "name": "@happyhouse/happyhouse-framework",
+  "name": "@alpha/alpha-framework",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,9 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.bspkfy.com:dev/iot/happyhouse-framework.git"
+    "url": "https://github.com/digital-fortress-team/alpha-framework.git"
   },
   "dependencies": {
+    "amqplib": "^0.5.3",
     "cookie-parser": "^1.4.4",
     "debug": "^2.6.9",
     "errorhandler": "^1.5.0",
@@ -27,6 +28,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
+    "@types/amqplib": "^0.5.11",
     "@types/errorhandler": "0.0.32",
     "@types/express": "^4.16.1",
     "@types/ip": "^1.1.0",
@@ -51,6 +53,6 @@
       ".ts"
     ]
   },
-  "author": "Quynh Nguyen <quynh@bespokify.com>",
+  "author": "Quynh Nguyen <likeguitarz@gmail.com>",
   "license": "ISC"
 }
