@@ -1,5 +1,5 @@
-import { ResponseTrait } from '../Traits';
-declare class BaseController extends ResponseTrait {
+import { ExpressResponseTrait } from '../Traits';
+declare class BaseController extends ExpressResponseTrait {
     constructor();
     protected filterFields(input: any, fields: any): any;
 }

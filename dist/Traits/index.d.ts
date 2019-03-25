@@ -1,1 +1,2 @@
-export { default as ResponseTrait } from './ResponseTrait';
+export { default as ExpressResponseTrait } from './ExpressResponseTrait';
+export { default as LambdaResponseTrait } from './LambdaResponseTrait';

@@ -1,8 +1,8 @@
 import { Response, NextFunction } from 'express';
 
-import { ResponseTrait } from '../Traits';
+import { ExpressResponseTrait } from '../Traits';
 
-class BaseAuthenticateMiddleware extends ResponseTrait {
+class BaseAuthenticateMiddleware extends ExpressResponseTrait {
   constructor() {
     super();
   }

@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { ResponseTrait } from '../Traits';
-declare class BaseRequest extends ResponseTrait {
+import { ExpressResponseTrait } from '../Traits';
+declare class BaseRequest extends ExpressResponseTrait {
     constructor();
     static validate(req: Request, res: Response, next: NextFunction): any;
 }

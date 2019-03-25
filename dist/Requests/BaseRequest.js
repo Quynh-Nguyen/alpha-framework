@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const check_1 = require("express-validator/check");
 const Traits_1 = require("../Traits");
-const { error } = Traits_1.ResponseTrait;
-class BaseRequest extends Traits_1.ResponseTrait {
+const { error } = Traits_1.ExpressResponseTrait;
+class BaseRequest extends Traits_1.ExpressResponseTrait {
     constructor() {
         super();
     }

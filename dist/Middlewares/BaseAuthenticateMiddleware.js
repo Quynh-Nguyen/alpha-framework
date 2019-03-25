@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Traits_1 = require("../Traits");
-class BaseAuthenticateMiddleware extends Traits_1.ResponseTrait {
+class BaseAuthenticateMiddleware extends Traits_1.ExpressResponseTrait {
     constructor() {
         super();
     }

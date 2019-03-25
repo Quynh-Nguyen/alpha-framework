@@ -1,11 +1,11 @@
 import { validationResult } from 'express-validator/check';
 import { Request, Response, NextFunction } from 'express';
 
-import { ResponseTrait } from '../Traits';
+import { ExpressResponseTrait } from '../Traits';
 
-const { error } = ResponseTrait;
+const { error } = ExpressResponseTrait;
 
-class BaseRequest extends ResponseTrait {
+class BaseRequest extends ExpressResponseTrait {
   constructor() {
     super();
   }

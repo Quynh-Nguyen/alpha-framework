@@ -1,6 +1,6 @@
-import { ResponseTrait } from '../Traits';
+import { ExpressResponseTrait } from '../Traits';
 
-class BaseController extends ResponseTrait {
+class BaseController extends ExpressResponseTrait {
   constructor() {
     super();
   }
