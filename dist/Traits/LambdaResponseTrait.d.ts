@@ -1,6 +1,6 @@
-import { LambdaResponseTraitType } from '../Types';
+import { APIGatewayProxyResult } from 'aws-lambda';
 declare class LambdaResponseTrait {
     constructor();
-    static success: (data: any) => LambdaResponseTraitType;
+    static success: (data: any) => APIGatewayProxyResult;
 }
 export default LambdaResponseTrait;

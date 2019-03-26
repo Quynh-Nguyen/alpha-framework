@@ -12,11 +12,11 @@ let LambdaResponseTrait = class LambdaResponseTrait {
 LambdaResponseTrait.success = (data) => {
     return {
         statusCode: 200,
-        body: {
+        body: JSON.stringify({
             status: true,
             data,
             message: 'OK',
-        }
+        })
     };
 };
 LambdaResponseTrait = tslib_1.__decorate([

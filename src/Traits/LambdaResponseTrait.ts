@@ -1,4 +1,5 @@
-import { LambdaResponseTraitType } from '../Types';
+// import { LambdaResponseTraitType } from '../Types';
+import { APIGatewayProxyResult } from 'aws-lambda';
 
 interface LambdaResponseTraitInterface {
   success(data: any): object;
@@ -14,14 +15,14 @@ class LambdaResponseTrait {
     //
   }
 
-  public static success = (data: any): LambdaResponseTraitType => {
+  public static success = (data: any): APIGatewayProxyResult => {
     return {
       statusCode: 200,
-      body: {
+      body: JSON.stringify({
         status: true,
         data,
         message: 'OK',
-      }
+      })
     }
   }
 }
