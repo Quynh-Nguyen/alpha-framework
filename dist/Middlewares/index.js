@@ -1,5 +1,3 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var BaseAuthenticateMiddleware_1 = require("./BaseAuthenticateMiddleware");
-exports.BaseAuthenticateMiddleware = BaseAuthenticateMiddleware_1.default;
+// export { default as BaseAuthenticateMiddleware} from './BaseAuthenticateMiddleware';
 //# sourceMappingURL=index.js.map

@@ -1,5 +1,3 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var BaseRequest_1 = require("./BaseRequest");
-exports.BaseRequest = BaseRequest_1.default;
+// export { default as BaseRequest } from './BaseRequest';
 //# sourceMappingURL=index.js.map

@@ -1,9 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Traits_1 = require("../Traits");
-class BaseController extends Traits_1.ExpressResponseTrait {
+class BaseController {
     constructor() {
-        super();
+        //
     }
     filterFields(input, fields) {
         const newInput = {};
