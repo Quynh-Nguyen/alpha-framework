@@ -1,4 +1,3 @@
-// import { LambdaResponseTraitType } from '../Types';
 import { APIGatewayProxyResult } from 'aws-lambda';
 
 interface LambdaResponseTraitInterface {
