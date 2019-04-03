@@ -19,6 +19,16 @@ LambdaResponseTrait.success = (data) => {
         })
     };
 };
+LambdaResponseTrait.error = (message, statusCode = 404) => {
+    return {
+        statusCode,
+        body: JSON.stringify({
+            status: true,
+            data: [],
+            message,
+        })
+    };
+};
 LambdaResponseTrait = tslib_1.__decorate([
     staticImplements(),
     tslib_1.__metadata("design:paramtypes", [])
