@@ -2,7 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 function staticImplements() {
-    return (constructor) => { constructor; };
+    return (constructor) => {
+        constructor;
+    };
 }
 let LambdaResponseTrait = class LambdaResponseTrait {
     constructor() {
@@ -13,7 +15,7 @@ LambdaResponseTrait.success = (data) => {
     return {
         statusCode: 200,
         body: JSON.stringify({
-            status: true,
+            statusCode: 200,
             data,
             message: 'OK',
         })
@@ -23,8 +25,8 @@ LambdaResponseTrait.error = (message, statusCode = 404) => {
     return {
         statusCode,
         body: JSON.stringify({
-            status: true,
-            data: [],
+            statusCode,
+            data: null,
             message,
         })
     };

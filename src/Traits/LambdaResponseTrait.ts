@@ -2,11 +2,14 @@ import { APIGatewayProxyResult } from 'aws-lambda';
 
 interface LambdaResponseTraitInterface {
   success(data: any): object;
+
   error(message: any, statusCode: number): object;
 }
 
 function staticImplements<T>() {
-  return (constructor: T) => {constructor};
+  return (constructor: T) => {
+    constructor;
+  };
 }
 
 @staticImplements<LambdaResponseTraitInterface>()
@@ -19,7 +22,7 @@ class LambdaResponseTrait {
     return {
       statusCode: 200,
       body: JSON.stringify({
-        status: true,
+        statusCode: 200,
         data,
         message: 'OK',
       })
@@ -30,8 +33,8 @@ class LambdaResponseTrait {
     return {
       statusCode,
       body: JSON.stringify({
-        status: true,
-        data: [],
+        statusCode,
+        data: null,
         message,
       })
     }
