@@ -22,8 +22,12 @@ class LambdaResponseTrait {
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin" : "*",
-        "Access-Control-Allow-Credentials" : true,
+        'Access-Control-Max-Age' : 600,
+        'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent',
+        'Access-Control-Expose-Headers': 'Content-Length',
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Credentials' : false,
+        'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PUT,DELETE,PATCH',
       },
       body: JSON.stringify({
         statusCode: 200,
@@ -37,8 +41,12 @@ class LambdaResponseTrait {
     return {
       statusCode,
       headers: {
-        "Access-Control-Allow-Origin" : "*",
-        "Access-Control-Allow-Credentials" : true, 
+        'Access-Control-Max-Age' : 600,
+        'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent',
+        'Access-Control-Expose-Headers': 'Content-Length',
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Credentials' : false,
+        'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PUT,DELETE,PATCH',
       },
       body: JSON.stringify({
         statusCode,
