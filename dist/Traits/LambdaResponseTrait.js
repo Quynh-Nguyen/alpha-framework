@@ -14,6 +14,14 @@ let LambdaResponseTrait = class LambdaResponseTrait {
 LambdaResponseTrait.success = (data) => {
     return {
         statusCode: 200,
+        headers: {
+            'Access-Control-Max-Age': 600,
+            'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent',
+            'Access-Control-Expose-Headers': 'Content-Length',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': false,
+            'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PUT,DELETE,PATCH',
+        },
         body: JSON.stringify({
             statusCode: 200,
             data,
@@ -24,6 +32,14 @@ LambdaResponseTrait.success = (data) => {
 LambdaResponseTrait.error = (message, statusCode = 404) => {
     return {
         statusCode,
+        headers: {
+            'Access-Control-Max-Age': 600,
+            'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent',
+            'Access-Control-Expose-Headers': 'Content-Length',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': false,
+            'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PUT,DELETE,PATCH',
+        },
         body: JSON.stringify({
             statusCode,
             data: null,
