@@ -21,6 +21,10 @@ class LambdaResponseTrait {
   public static success = (data: any): APIGatewayProxyResult => {
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+        "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS 
+      },
       body: JSON.stringify({
         statusCode: 200,
         data,
@@ -32,6 +36,10 @@ class LambdaResponseTrait {
   public static error = (message: any, statusCode = 404): APIGatewayProxyResult => {
     return {
       statusCode,
+      headers: {
+        "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+        "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS 
+      },
       body: JSON.stringify({
         statusCode,
         data: null,
